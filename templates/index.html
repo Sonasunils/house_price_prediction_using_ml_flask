@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+        }
+        .container {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px gray;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+        button {
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h2>🏠 House Price Prediction</h2>
+
+    <form action="/predict" method="post">
+        <input type="number" name="area" placeholder="Area (sqft)" required>
+        <input type="number" name="bedrooms" placeholder="Bedrooms" required>
+        <input type="number" name="bathrooms" placeholder="Bathrooms" required>
+        <input type="number" name="age" placeholder="Age of house" required>
+
+        <select name="location">
+            <option value="Urban">Urban</option>
+            <option value="Semi-Urban">Semi-Urban</option>
+            <option value="Rural">Rural</option>
+        </select>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    <h3 style="color:blue; text-align:center;">
+        {{ prediction_text }}
+    </h3>
+</div>
+</body>
+</html>
